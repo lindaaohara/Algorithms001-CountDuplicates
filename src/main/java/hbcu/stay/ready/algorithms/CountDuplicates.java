@@ -10,16 +10,7 @@ public class CountDuplicates {
      * @return
      */
     public Integer countDuplicates(String[] input) {
-        Arrays.sort(input);
-        String currentValue = null;
-        int duplicates = 0;
-        for (int i = 0; i < input.length-1; i++) {
-            if (input[i] == input[i + 1] && input[i] != currentValue) {
-                duplicates ++;
-                currentValue = input[i];
-            }
-        }
-        return duplicates;
+        return counter(input);
     }
 
 
@@ -30,8 +21,12 @@ public class CountDuplicates {
      * @return
      */
     public Integer countDuplicates(Integer[] input) {
+        return counter(input);
+    }
+
+    private Integer counter(Object[] input){
         Arrays.sort(input);
-        Integer currentValue = null;
+        Object currentValue = null;
         int duplicates = 0;
         for (int i = 0; i < input.length-1; i++) {
             if (input[i] == input[i + 1] && input[i] != currentValue) {
